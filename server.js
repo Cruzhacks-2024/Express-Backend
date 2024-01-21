@@ -22,7 +22,7 @@ let sessID = sessions.length;
 // SQL primary key ref: https://www.w3schools.com/sql/sql_primarykey.asp
 db.serialize(
   function () {
-    db.run('CREATE TABLE locations (id INT PRIMARY KEY, name VARCHAR, room VARCHAR, lat FLOAT, long FLOAT)');
+    db.run('CREATE TABLE locations (id INT PRIMARY KEY, name VARCHAR, description VARCHAR, lat FLOAT, long FLOAT)');
     db.run('CREATE TABLE sessions (id INT PRIMARY KEY, title VARCHAR, room VARCHAR, locationID INT REFERENCES locations(locationID))');
     const stmt = db.prepare('INSERT INTO locations VALUES (?, ?, ?, ?, ?)');
     for (let i = 0; i < locations.length; i++) {
