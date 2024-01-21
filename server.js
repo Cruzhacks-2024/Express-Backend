@@ -8,6 +8,9 @@ const app = express();
 const port = 3000;
 const sqlite3 = require('sqlite3').verbose();
 
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 // Local in-memory database initialization
 // TWO TABLES: locations for storing locations, which links to sessions table storing the current sessions
 const db = new sqlite3.Database(':memory:');
