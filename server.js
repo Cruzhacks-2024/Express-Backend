@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 // Local in-memory database initialization
 // TWO TABLES: locations for storing locations, which links to sessions table storing the current sessions
 const db = new sqlite3.Database(':memory:');
-let locID = locations.length;
-let sessID = sessions.length;
+let locID = locations.length - 1;
+let sessID = sessions.length - 1;
 // Example SQL join statement + multi-column foreign key: https://stackoverflow.com/a/3178747/5661257
 // SQL join statement reference: https://www.w3schools.com/sql/sql_join.asp
 // SQLite reference: https://www.tutorialspoint.com/sqlite/sqlite_insert_query.htm
