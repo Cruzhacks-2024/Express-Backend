@@ -16,3 +16,4 @@ To stop the server
 ```sh
 $ docker-compose down
 ```
+Connect to the server via `http://localhost:3000`.
