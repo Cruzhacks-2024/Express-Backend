@@ -1,4 +1,7 @@
-FROM --platform=arm64 node:latest
-ADD . /app
-RUN cd app && npm install express sqlite3 
-ENTRYPOINT [ "node", "index.js" ]
+FROM node:11-alpine
+RUN mkdir -p /app
+WORKDIR /app
+COPY . .
+RUN npm install
+EXPOSE 3000
+CMD ["npm", "run", "start"]
