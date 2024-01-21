@@ -79,8 +79,21 @@ app.get('/locations', (req, res) => {
     );
     res.status(201).end();
   } else {
-    res.status(400).end()
+    res.status(400).end();
   }
+}).delete('/locations/:locationID', (req, res) => {
+  db.serialize(
+    function () {
+      db.run("DELETE FROM locations WHERE locationID = ?", req.params.locationID,
+      function (err) {
+        if (err) {
+          res.status(500).end();
+        } else {
+          res.status(200).end();
+        }
+      });
+    }
+  )
 });
 
 // Listen on localhost port 3000 for database connections
