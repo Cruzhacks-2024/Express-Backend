@@ -1,5 +1,5 @@
 # Express-Backend
-Express backend database server for session mapping app
+Express backend database server in sqlite3 for session mapping app
 
 Getting started reference: https://itnext.io/lets-dockerize-a-nodejs-express-api-22700b4105e4
 
