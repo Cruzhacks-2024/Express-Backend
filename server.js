@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 // Local in-memory database initialization
 // TWO TABLES: locations for storing locations, which links to sessions table storing the current sessions
 const db = new sqlite3.Database('./database/db');
-const ids = {locID: 0, sessID: 0}
+const ids = {locID: locations.length, sessID: sessions.length}
 
 // Example SQL join statement + multi-column foreign key: https://stackoverflow.com/a/3178747/5661257
 // SQL join statement reference: https://www.w3schools.com/sql/sql_join.asp
@@ -38,7 +38,7 @@ db.serialize(
           stmt.finalize();
         })
       } else {
-        ids.locID = row.max;
+        ids.locID = row.max + 1;
       }
     });
     db.get('SELECT MAX(id) AS max FROM sessions',
@@ -57,7 +57,7 @@ db.serialize(
           stmt2.finalize();
         })
       } else {
-        ids.sessID = row.max;
+        ids.sessID = row.max + 1;
       }
     });
   }
@@ -94,10 +94,10 @@ app.get('/locations', (req, res) => {
 }).put('/locations', (req, res) => {
   const body = req.body;
   if (body.name && body.description && body.lat && body.long) {
-    ids.locID += 1;
     db.serialize(
       function () {
         db.run("INSERT INTO locations VALUES (?, ?, ?, ?, ?)", [ids.locID, body.name, body.description, body.lat, body.long]);
+        ids.locID += 1;
       }
     );
     res.status(201).end();
