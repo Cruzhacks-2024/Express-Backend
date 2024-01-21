@@ -50,6 +50,7 @@ app.get('/locations', (req, res) => {
       });
     }
   );
+  // Endpoint to retrieve the list of sessions associated with a location
 }).get('/locations/:locationID', (req, res) => {
   const params = req.params;
   db.serialize(
@@ -63,9 +64,20 @@ app.get('/locations', (req, res) => {
       });
     }
   )
+  // Endpoint to add a new location
 }).put('/locations', (req, res) => {
   const body = req.body;
-  
+  if (body.name && body.description && body.lat && body.long) {
+    locID += 1;
+    db.serialize(
+      function () {
+        db.run("INSERT INTO locations VALUES (?, ?, ?, ?, ?)", [locID, body.name, body.description, body.lat, body.long]);
+      }
+    );
+    res.status(201).end();
+  } else {
+    res.status(400).end()
+  }
 });
 
 // Listen on localhost port 3000 for database connections

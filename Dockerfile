@@ -1,4 +1,4 @@
-FROM node:11-alpine
+FROM amd64/node:lts
 RUN mkdir -p /app
 WORKDIR /app
 COPY . .

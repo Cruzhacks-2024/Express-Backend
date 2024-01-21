@@ -4,7 +4,7 @@ Express backend database server for session mapping app
 Getting started reference: https://itnext.io/lets-dockerize-a-nodejs-express-api-22700b4105e4
 
 ## Setup
-To setup, run
+To build the server image, run
 ```sh
 $ docker-compose build
 ```
