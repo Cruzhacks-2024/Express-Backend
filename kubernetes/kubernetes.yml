@@ -283,8 +283,6 @@ spec:
 # Source: https://cloud.google.com/kubernetes-engine/docs/how-to/stateful-apps
 apiVersion: apps/v1
 kind: StatefulSet
-metadata:
-  name: statefulset-express-db
 spec:
   selector:
     matchLabels:
