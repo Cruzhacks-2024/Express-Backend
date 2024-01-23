@@ -22,9 +22,9 @@ spec:
         ports:
         - containerPort: 80
           name: stateful-port
-        volumeMounts: # https://kubernetes.io/docs/concepts/storage/volumes/
-        - name: app
-          mountPath: /app
+        # volumeMounts: # https://kubernetes.io/docs/concepts/storage/volumes/
+        # - name: app
+        #   mountPath: /app
   volumeClaimTemplates:
   - metadata:
       name: persistent-volume-express
