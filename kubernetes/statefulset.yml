@@ -8,7 +8,7 @@ spec:
     matchLabels:
       app: express-db-persistent
   serviceName: express-db-persistent-service
-  replicas: 3
+  replicas: 2
   updateStrategy:
     type: RollingUpdate
   template:
@@ -18,18 +18,16 @@ spec:
     spec:
       containers:
       - name: express-backend-sha256-1
-        image: ...
+        image: gcr.io/cruzhacks2024-411821/github.com/cruzhacks-2024/express-backend
         ports:
         - containerPort: 80
           name: stateful-port
-        volumeMounts:
+        volumeMounts: # https://kubernetes.io/docs/concepts/storage/volumes/
         - name: persistent-volume-express
-          mountPath: ...
+          mountPath: /app
   volumeClaimTemplates:
   - metadata:
       name: persistent-volume-express
-      annotations:
-        ...
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
