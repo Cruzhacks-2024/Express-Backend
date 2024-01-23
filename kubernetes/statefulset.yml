@@ -2,12 +2,12 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: "statefulset"
+  name: statefulset
 spec:
   selector:
     matchLabels:
       app: express-db-persistent
-  serviceName: "express-db-persistent-service"
+  serviceName: express-db-persistent-service
   replicas: 3
   updateStrategy:
     type: RollingUpdate
