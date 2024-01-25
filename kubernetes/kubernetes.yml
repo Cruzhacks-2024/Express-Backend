@@ -156,7 +156,8 @@ spec:
           name: "database-server"
       volumeMounts:
       # This specifies where the volume/perisistent disk "app" as declared above should be mounted in the container
-        - mountPath: "/vol" # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/#volumemount-v1-core
+      # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/#volumemount-v1-core
+        - mountPath: "/vol"
           name: app
 # ---
 # apiVersion: autoscaling/v2
