@@ -1,138 +1,158 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   annotations:
+#     autopilot.gke.io/resource-adjustment: >-
+#       {"input":{"containers":[{"name":"express-backend-sha256-1"}]},"output":{"containers":[{"limits":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"},"requests":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"},"name":"express-backend-sha256-1"}]},"modified":true}
+#     autopilot.gke.io/warden-version: 2.7.41
+#   labels:
+#     app: express-db-persistent
+#   managedFields:
+#     - apiVersion: apps/v1
+#       fieldsType: FieldsV1
+#       fieldsV1:
+#         'f:spec':
+#           'f:replicas': {}
+#       manager: vpa-recommender
+#       operation: Update
+#       subresource: scale
+#     - apiVersion: apps/v1
+#       fieldsType: FieldsV1
+#       fieldsV1:
+#         'f:metadata':
+#           'f:labels':
+#             .: {}
+#             'f:app': {}
+#         'f:spec':
+#           'f:progressDeadlineSeconds': {}
+#           'f:revisionHistoryLimit': {}
+#           'f:selector': {}
+#           'f:strategy':
+#             'f:rollingUpdate':
+#               .: {}
+#               'f:maxSurge': {}
+#               'f:maxUnavailable': {}
+#             'f:type': {}
+#           'f:template':
+#             'f:metadata':
+#               'f:labels':
+#                 .: {}
+#                 'f:app': {}
+#             'f:spec':
+#               'f:containers':
+#                 'k:{"name":"express-backend-sha256-1"}':
+#                   .: {}
+#                   'f:image': {}
+#                   'f:imagePullPolicy': {}
+#                   'f:name': {}
+#                   'f:resources': {}
+#                   'f:terminationMessagePath': {}
+#                   'f:terminationMessagePolicy': {}
+#               'f:dnsPolicy': {}
+#               'f:restartPolicy': {}
+#               'f:schedulerName': {}
+#               'f:securityContext': {}
+#               'f:terminationGracePeriodSeconds': {}
+#       manager: GoogleCloudConsole
+#       operation: Update
+#       time: '2024-01-21T14:55:10Z'
+#     - apiVersion: apps/v1
+#       fieldsType: FieldsV1
+#       fieldsV1:
+#         'f:metadata':
+#           'f:annotations':
+#             'f:deployment.kubernetes.io/revision': {}
+#         'f:status':
+#           'f:availableReplicas': {}
+#           'f:conditions':
+#             .: {}
+#             'k:{"type":"Available"}':
+#               .: {}
+#               'f:lastTransitionTime': {}
+#               'f:lastUpdateTime': {}
+#               'f:message': {}
+#               'f:reason': {}
+#               'f:status': {}
+#               'f:type': {}
+#             'k:{"type":"Progressing"}':
+#               .: {}
+#               'f:lastTransitionTime': {}
+#               'f:lastUpdateTime': {}
+#               'f:message': {}
+#               'f:reason': {}
+#               'f:status': {}
+#               'f:type': {}
+#           'f:observedGeneration': {}
+#           'f:readyReplicas': {}
+#           'f:replicas': {}
+#           'f:updatedReplicas': {}
+#       manager: kube-controller-manager
+#       operation: Update
+#       subresource: status
+#       time: '2024-01-22T15:33:46Z'
+#   name: express-db-persistent
+#   namespace: default
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: express-db-persistent
+#   strategy:
+#     rollingUpdate:
+#       maxSurge: 25%
+#       maxUnavailable: 25%
+#     type: RollingUpdate
+#   template:
+#     metadata:
+#       labels:
+#         app: express-db-persistent
+#     spec:
+#       containers:
+#         - image: >-
+#             gcr.io/cruzhacks2024-411821/github.com/cruzhacks-2024/express-backend
+#           imagePullPolicy: IfNotPresent
+#           name: express-backend-sha256-1
+#           resources:
+#             limits:
+#               cpu: 500m
+#               ephemeral-storage: 1Gi
+#               memory: 2Gi
+#             requests:
+#               cpu: 500m
+#               ephemeral-storage: 1Gi
+#               memory: 2Gi
+#           securityContext:
+#             capabilities:
+#               drop:
+#                 - NET_RAW
+#       securityContext:
+#         seccompProfile:
+#           type: RuntimeDefault
+#       tolerations:
+#         - effect: NoSchedule
+#           key: kubernetes.io/arch
+#           operator: Equal
+#           value: amd64
+
+# Reference: https://devopscube.com/persistent-volume-google-kubernetes-engine/
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
-  annotations:
-    autopilot.gke.io/resource-adjustment: >-
-      {"input":{"containers":[{"name":"express-backend-sha256-1"}]},"output":{"containers":[{"limits":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"},"requests":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"},"name":"express-backend-sha256-1"}]},"modified":true}
-    autopilot.gke.io/warden-version: 2.7.41
-  labels:
-    app: express-db-persistent
-  managedFields:
-    - apiVersion: apps/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:spec':
-          'f:replicas': {}
-      manager: vpa-recommender
-      operation: Update
-      subresource: scale
-    - apiVersion: apps/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:labels':
-            .: {}
-            'f:app': {}
-        'f:spec':
-          'f:progressDeadlineSeconds': {}
-          'f:revisionHistoryLimit': {}
-          'f:selector': {}
-          'f:strategy':
-            'f:rollingUpdate':
-              .: {}
-              'f:maxSurge': {}
-              'f:maxUnavailable': {}
-            'f:type': {}
-          'f:template':
-            'f:metadata':
-              'f:labels':
-                .: {}
-                'f:app': {}
-            'f:spec':
-              'f:containers':
-                'k:{"name":"express-backend-sha256-1"}':
-                  .: {}
-                  'f:image': {}
-                  'f:imagePullPolicy': {}
-                  'f:name': {}
-                  'f:resources': {}
-                  'f:terminationMessagePath': {}
-                  'f:terminationMessagePolicy': {}
-              'f:dnsPolicy': {}
-              'f:restartPolicy': {}
-              'f:schedulerName': {}
-              'f:securityContext': {}
-              'f:terminationGracePeriodSeconds': {}
-      manager: GoogleCloudConsole
-      operation: Update
-      time: '2024-01-21T14:55:10Z'
-    - apiVersion: apps/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            'f:deployment.kubernetes.io/revision': {}
-        'f:status':
-          'f:availableReplicas': {}
-          'f:conditions':
-            .: {}
-            'k:{"type":"Available"}':
-              .: {}
-              'f:lastTransitionTime': {}
-              'f:lastUpdateTime': {}
-              'f:message': {}
-              'f:reason': {}
-              'f:status': {}
-              'f:type': {}
-            'k:{"type":"Progressing"}':
-              .: {}
-              'f:lastTransitionTime': {}
-              'f:lastUpdateTime': {}
-              'f:message': {}
-              'f:reason': {}
-              'f:status': {}
-              'f:type': {}
-          'f:observedGeneration': {}
-          'f:readyReplicas': {}
-          'f:replicas': {}
-          'f:updatedReplicas': {}
-      manager: kube-controller-manager
-      operation: Update
-      subresource: status
-      time: '2024-01-22T15:33:46Z'
-  name: express-db-persistent
-  namespace: default
+  name: express-db-pod
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: express-db-persistent
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
-  template:
-    metadata:
-      labels:
-        app: express-db-persistent
-    spec:
-      containers:
-        - image: >-
-            gcr.io/cruzhacks2024-411821/github.com/cruzhacks-2024/express-backend
-          imagePullPolicy: IfNotPresent
-          name: express-backend-sha256-1
-          resources:
-            limits:
-              cpu: 500m
-              ephemeral-storage: 1Gi
-              memory: 2Gi
-            requests:
-              cpu: 500m
-              ephemeral-storage: 1Gi
-              memory: 2Gi
-          securityContext:
-            capabilities:
-              drop:
-                - NET_RAW
-      securityContext:
-        seccompProfile:
-          type: RuntimeDefault
-      tolerations:
-        - effect: NoSchedule
-          key: kubernetes.io/arch
-          operator: Equal
-          value: amd64
+  volumes:
+    - name: database-storage
+      persistentVolumeClaim:
+        claimName: database-storage
+  containers:
+    - name: express-backend-sha256-1
+      image: gcr.io/cruzhacks2024-411821/github.com/cruzhacks-2024/express-backend
+      ports:
+        - containerPort: 3000
+          name: "database-server"
+      volumeMounts:
+        - mountPath: "/app"
+          name: app-storage
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
