@@ -1,6 +1,7 @@
 FROM amd64/node:lts
 # Declare a mount point for external volumes
 # https://docs.docker.com/engine/reference/builder/#volume
+RUN mkdir -p /vol
 VOLUME /vol
 WORKDIR /app
 COPY . .
