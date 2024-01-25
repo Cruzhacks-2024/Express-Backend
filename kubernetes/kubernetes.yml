@@ -141,7 +141,7 @@ metadata:
   name: express-db-pod
 spec:
   volumes:
-    - name: database-storage
+    - name: app
       persistentVolumeClaim:
         claimName: database-storage
   containers:
@@ -152,7 +152,7 @@ spec:
           name: "database-server"
       volumeMounts:
         - mountPath: "/app"
-          name: app-storage
+          name: app
 ---
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
