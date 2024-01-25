@@ -1,5 +1,4 @@
 FROM amd64/node:lts
-VOLUME /app
 RUN mkdir -p /app
 WORKDIR /app
 COPY . .
