@@ -159,7 +159,7 @@ spec:
         - containerPort: 3000
           name: "database-server"
       volumeMounts:
-        - mountPath: "/vol"
+        - mountPath: "/app"
           name: app
 # ---
 # apiVersion: autoscaling/v2
