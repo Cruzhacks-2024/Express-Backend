@@ -1,0 +1,12 @@
+# Source: https://devopscube.com/persistent-volume-google-kubernetes-engine/
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database-storage
+spec:
+  storageClassName: gold
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
