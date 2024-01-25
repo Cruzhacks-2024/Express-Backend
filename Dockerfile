@@ -1,5 +1,6 @@
 FROM amd64/node:lts
 RUN mkdir -p /app
+VOLUME /app
 WORKDIR /app
 COPY . .
 RUN npm install
