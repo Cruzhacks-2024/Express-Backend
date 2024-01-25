@@ -137,6 +137,10 @@
 # Reference: https://devopscube.com/persistent-volume-google-kubernetes-engine/
 # A Pod is a worker in Kubernetes
 # Multiple Pods can run on a single Node: Container(s) -> Pod(s) -> Deployment
+
+# `containers -> volumeMounts` specifies where the volume/perisistent disk "app" as declared above should be mounted in the container
+# https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/#volumemount-v1-core
+
 apiVersion: v1
 kind: Pod
 metadata:
@@ -155,8 +159,6 @@ spec:
         - containerPort: 3000
           name: "database-server"
       volumeMounts:
-      # This specifies where the volume/perisistent disk "app" as declared above should be mounted in the container
-      # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/#volumemount-v1-core
         - mountPath: "/vol"
           name: app
 # ---
