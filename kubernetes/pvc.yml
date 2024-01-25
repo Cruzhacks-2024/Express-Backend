@@ -1,4 +1,5 @@
 # Source: https://devopscube.com/persistent-volume-google-kubernetes-engine/
+# This declares a Persistent Volume that uses a Storage Class: StorageClass -> PersistentVolumeClaim -> Volume in Pod
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
