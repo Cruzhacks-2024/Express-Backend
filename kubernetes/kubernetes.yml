@@ -135,7 +135,7 @@
 #           value: amd64
 
 # Reference: https://devopscube.com/persistent-volume-google-kubernetes-engine/
-apiVersion: apps/v1
+apiVersion: v1
 kind: Pod
 metadata:
   name: express-db-pod
