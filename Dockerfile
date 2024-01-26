@@ -3,6 +3,7 @@ FROM amd64/node:lts
 # https://docs.docker.com/engine/reference/builder/#volume
 WORKDIR /app
 COPY . .
-RUN npm install
+# RUN npm install
 EXPOSE 3000
-CMD ["npm", "run", "start"]
+# CMD ["npm", "run", "start"]
+CMD [ "ls", "-l"]
