@@ -150,6 +150,13 @@ metadata:
 spec:
   volumes:
     - name: app
+      # configMap: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.29/#configmapvolumesource-v1-core
+      configMap:
+        optional: true
+        name: files-map
+        items:
+          - key: app
+            path: /app
       persistentVolumeClaim:
         claimName: database-storage
   containers:
