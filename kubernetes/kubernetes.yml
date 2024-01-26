@@ -165,9 +165,9 @@ spec:
       ports:
         - containerPort: 3000
           name: "database-server"
-      volumeMounts:
-        - mountPath: "/app"
-          name: app
+      # volumeMounts:
+      #   - mountPath: "/app"
+      #     name: app
 # ---
 # apiVersion: autoscaling/v2
 # kind: HorizontalPodAutoscaler
