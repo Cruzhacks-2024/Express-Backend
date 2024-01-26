@@ -5,5 +5,6 @@ WORKDIR /app
 COPY . .
 # RUN npm install
 EXPOSE 3000
+VOLUME /app
 # CMD ["npm", "run", "start"]
-CMD [ "ls", "-l"]
+CMD [ "ls", "-l" ]
