@@ -1,68 +1,44 @@
 [
   {
     "name": "S&E Library Benches",
-    "description": "n/a",
+    "description": "Picnic benches outside of the S&E library",
     "lat": 37.00073922449225,
     "long": -122.06090012860336
   },
   {
     "name": "Oakes Cafe Benches",
-    "description": "n/a",
+    "description": "Benches outside of Oakes cafe",
     "lat": 36.989212566808085,
     "long": -122.06314309799698
   },
   {
     "name": "Stevenson Library",
-    "description": "n/a",
+    "description": "Library at Stevenson college open late",
     "lat": 36.9972206691053,
     "long": -122.05143651031341
   },
   {
     "name": "S&E Library",
-    "description": "room 308",
+    "description": "Science and Engineering Library",
     "lat": 36.999949415939994,
     "long": -122.06063776837726
   },
   {
     "name": "Porter Hitchcock Lounge",
-    "description": "n/a",
+    "description": "Lounge at Porter college",
     "lat": 36.99458268292493,
     "long": -122.065766013654
   },
   {
     "name": "Namaste Lounge",
-    "description": "n/a",
+    "description": "Lounge at college 9/**10**",
     "lat": 37.000709492619244,
     "long": -122.0572041877158
   },
   {
-    "name": "Namaste Lounge",
-    "description": "n/a",
-    "lat": 37.000774932648234,
-    "long": -122.0571774315558
-  },
-  {
     "name": "McHenry Library",
-    "description": "room 2316",
+    "description": "Main on campus library",
     "lat": 36.995584983192245,
     "long": -122.05876896358721
-  },
-  {
-    "name": "McHenry Library",
-    "description": "room 2353",
-    "lat": 36.99551014157986,
-    "long": -122.05880061317896
-  },
-  {
-    "name": "McHenry Library",
-    "description": "room 2359",
-    "lat": 36.99543572850361,
-    "long": -122.05882649375134
-  },
-  {
-    "name": "McHenry Library",
-    "description": "room 2351",
-    "lat": 36.99555283940383,
-    "long": -122.05878477457924
   }
 ]

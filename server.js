@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 // Local in-memory database initialization
 // TWO TABLES: sessions for storing session, which links to a locations table storing the current locations
 // Current locations table schema: { name, description, lat, long }
-// Current session table schema: { title, room }
+// Current session table schema: { title, description }
 const db = new sqlite3.Database("./database/db");
 const ids = { locID: locations.length, sessID: sessions.length };
 
@@ -48,7 +48,7 @@ db.serialize(function () {
   db.get("SELECT MAX(id) AS max FROM sessions", function (err, row) {
     if (err) {
       db.run(
-        "CREATE TABLE IF NOT EXISTS sessions (id INT PRIMARY KEY, title VARCHAR, room VARCHAR, locationID INT REFERENCES locations(locationID))",
+        "CREATE TABLE IF NOT EXISTS sessions (id INT PRIMARY KEY, title VARCHAR, description VARCHAR, locationID INT REFERENCES locations(locationID))",
         function (err) {
           if (err) {
             throw err;
@@ -56,7 +56,7 @@ db.serialize(function () {
           const stmt2 = db.prepare("INSERT INTO sessions VALUES (?, ?, ?, ?)");
           for (let i = 0; i < sessions.length; i++) {
             const e = sessions[i];
-            stmt2.run(i, e.title, e.room, e.locationID);
+            stmt2.run(i, e.title, e.description, e.locationID);
           }
           stmt2.finalize();
         },
@@ -103,7 +103,7 @@ app
     if (body.title) {
       db.run(
         "INSERT INTO sessions VALUES (?, ?, ?, ?)",
-        [ids.sessID, body.title, body.room ?? null, params.locationID],
+        [ids.sessID, body.title, body.description ?? null, params.locationID],
         function (err) {
           if (err) {
             res.status(500).send(`${err.name}: ${err.message}`);
@@ -117,7 +117,7 @@ app
       res
         .status(400)
         .send(
-          "Invalid session! Sessions must be given with title and room number specifed!",
+          "Invalid session! Sessions must be given with a title and (optional) description!",
         );
     }
   })

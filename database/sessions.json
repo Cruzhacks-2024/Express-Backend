@@ -2,6 +2,7 @@
   {
     "title": "Study session for CSE 101!!",
     "locationID": 0,
+    "description": "CSE 101 study session with the gang!",
     "room": "n/a",
     "class": "CSE121",
     "section": "n/a",
@@ -9,8 +10,9 @@
     "time": "time"
   },
   {
-    "title": "Oakes Cafe Benches",
-    "locationID": 0,
+    "title": "CSE 20 session",
+    "locationID": 1,
+    "description": "CSE 20 study session outdorrs, let's touch some grass y'all",
     "room": "n/a",
     "class": "CSE16",
     "section": "1",
@@ -18,8 +20,9 @@
     "time": "time"
   },
   {
-    "title": "Stevenson Library",
-    "locationID": 1,
+    "title": "CSE 30 study session",
+    "locationID": 2,
+    "description": "CSE 30 study session in the good ol' Stevenson library, letsa go",
     "room": "n/a",
     "class": "CSE20",
     "section": "2",
@@ -27,8 +30,9 @@
     "time": "time"
   },
   {
-    "title": "S&E Library",
-    "locationID": 2,
+    "title": "BIO 20A midterm review",
+    "locationID": 3,
+    "description": "BIO 20A midterm review session at S&E for all you nerds out there...Meet in room 305",
     "room": "n/a",
     "class": "CSE103",
     "section": "1",
@@ -36,8 +40,9 @@
     "time": "time"
   },
   {
-    "title": "Porter Hitchcock Lounge",
-    "locationID": 3,
+    "title": "Get high as the sky...",
+    "locationID": 4,
+    "description": "Just wanna hang out and get jaded...",
     "room": "n/a",
     "class": "CSE107",
     "section": "n/a",
@@ -45,8 +50,9 @@
     "time": "time"
   },
   {
-    "title": "Namaste Lounge",
-    "locationID": 4,
+    "title": "Ooh la la...",
+    "locationID": 5,
+    "description": "Let's have some fun ;)",
     "room": "n/a",
     "class": "CSE120",
     "section": "n/a",
@@ -54,8 +60,9 @@
     "time": "time"
   },
   {
-    "title": "Namaste Lounge",
-    "locationID": 4,
+    "title": "Sumer smash bros. TOURNAMENT",
+    "locationID": 5,
+    "description": "SUPER SMASH TOURNAMENT, LET'S GOOOOOO",
     "room": "n/a",
     "class": "CSE140",
     "section": "2",
@@ -63,8 +70,9 @@
     "time": "time"
   },
   {
-    "title": "McHenry Library",
-    "locationID": 5,
+    "title": "McHenry Library smok sesh",
+    "locationID": 6,
+    "description": "huh cool app yo who wanna get sky high at McHenry?",
     "room": "2316",
     "class": "CSE30",
     "section": "1",
@@ -72,8 +80,9 @@
     "time": "time"
   },
   {
-    "title": "McHenry Library",
+    "title": "McHenry Library hanging out",
     "locationID": 6,
+    "description": "Nice library to hang out at, let's do something...",
     "room": "2353",
     "class": "CSE130",
     "section": "2",
@@ -81,8 +90,9 @@
     "time": "time"
   },
   {
-    "title": "McHenry Library",
+    "title": "McHenry Library hangout...",
     "locationID": 6,
+    "description": "SO MANY SESSIONS HERE ALREADY, LET'S GOOOOO",
     "room": "2359",
     "class": "CSE110",
     "section": "1",
@@ -90,12 +100,23 @@
     "time": "time"
   },
   {
-    "title": "McHenry Library",
-    "locationID": 8,
+    "title": "McHenry Library exploration",
+    "locationID": 6,
+    "description": "Yo, let's explore this library! Meetup in room 2351 this weekend!!",
     "room": "2351",
     "class": "CSE101",
     "section": "2",
     "tutor": "name",
     "time": "time"
+  },
+  {
+    "title": "Nothing special",
+    "locationID": 6,
+    "description": null,
+    "room": null,
+    "class": null,
+    "section": null,
+    "tutor": null,
+    "time": null
   }
 ]

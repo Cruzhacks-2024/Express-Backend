@@ -48,14 +48,14 @@ This server accepts and responds to HTTP requests as follows:
 
 Returns 200 upon success, or 500 upon failure.
 
-- `GET /locations/<id>` - This returns a JSON-formatted array of objects that each provide details for the sessions at the location with the `id` given. Each session currently has a title and a room number (if applicable) at the associated location.
+- `GET /locations/<id>` - This returns a JSON-formatted array of objects that each provide details for the sessions at the location with the `id` given. Each session currently has a title and a description (if applicable).
   Response:
 
 ```javascript
 [
   {
     title: string,
-    room: int | null,
+    description: string | null,
   },
 ];
 ```
@@ -80,7 +80,7 @@ Returns 201 upon success, 400 for an ill-formatted request body, or 500 for othe
 ```javascript
   {
     title: string,
-    room: int | null
+    description: string | null
   }
 ```
 
