@@ -1,13 +1,101 @@
 [
-  {"title": "Study session for CSE 101!!", "locationID": 0, "room": "n/a", "class": "CSE121", "section": "n/a", "tutor": "name", "time": "time"},
-  {"title": "Oakes Cafe Benches", "locationID": 0, "room": "n/a", "class": "CSE16", "section": "1", "tutor": "name", "time": "time"},
-  {"title": "Stevenson Library", "locationID": 1, "room": "n/a", "class": "CSE20", "section": "2", "tutor": "name", "time": "time"},
-  {"title": "S&E Library", "locationID": 2, "room": "n/a", "class": "CSE103", "section": "1", "tutor": "name", "time": "time"},
-  {"title": "Porter Hitchcock Lounge", "locationID": 3, "room": "n/a", "class": "CSE107", "section": "n/a", "tutor": "name", "time": "time"},
-  {"title": "Namaste Lounge", "locationID": 4, "room": "n/a", "class": "CSE120", "section": "n/a", "tutor": "name", "time": "time"},
-  {"title": "Namaste Lounge", "locationID": 4, "room": "n/a", "class": "CSE140", "section": "2", "tutor": "name", "time": "time"},
-  {"title": "McHenry Library", "locationID": 5, "room": "2316", "class": "CSE30", "section": "1", "tutor": "name", "time": "time"},
-  {"title": "McHenry Library", "locationID": 6, "room": "2353", "class": "CSE130", "section": "2", "tutor": "name", "time": "time"},
-  {"title": "McHenry Library", "locationID": 6, "room": "2359", "class": "CSE110", "section": "1", "tutor": "name", "time": "time"},
-  {"title": "McHenry Library", "locationID": 8, "room": "2351", "class": "CSE101", "section": "2", "tutor": "name", "time": "time"}
+  {
+    "title": "Study session for CSE 101!!",
+    "locationID": 0,
+    "room": "n/a",
+    "class": "CSE121",
+    "section": "n/a",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "Oakes Cafe Benches",
+    "locationID": 0,
+    "room": "n/a",
+    "class": "CSE16",
+    "section": "1",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "Stevenson Library",
+    "locationID": 1,
+    "room": "n/a",
+    "class": "CSE20",
+    "section": "2",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "S&E Library",
+    "locationID": 2,
+    "room": "n/a",
+    "class": "CSE103",
+    "section": "1",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "Porter Hitchcock Lounge",
+    "locationID": 3,
+    "room": "n/a",
+    "class": "CSE107",
+    "section": "n/a",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "Namaste Lounge",
+    "locationID": 4,
+    "room": "n/a",
+    "class": "CSE120",
+    "section": "n/a",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "Namaste Lounge",
+    "locationID": 4,
+    "room": "n/a",
+    "class": "CSE140",
+    "section": "2",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "McHenry Library",
+    "locationID": 5,
+    "room": "2316",
+    "class": "CSE30",
+    "section": "1",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "McHenry Library",
+    "locationID": 6,
+    "room": "2353",
+    "class": "CSE130",
+    "section": "2",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "McHenry Library",
+    "locationID": 6,
+    "room": "2359",
+    "class": "CSE110",
+    "section": "1",
+    "tutor": "name",
+    "time": "time"
+  },
+  {
+    "title": "McHenry Library",
+    "locationID": 8,
+    "room": "2351",
+    "class": "CSE101",
+    "section": "2",
+    "tutor": "name",
+    "time": "time"
+  }
 ]

@@ -258,41 +258,41 @@ metadata:
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
-        'f:metadata':
-          'f:labels':
+        "f:metadata":
+          "f:labels":
             .: {}
-            'f:app': {}
-        'f:spec':
-          'f:allocateLoadBalancerNodePorts': {}
-          'f:externalTrafficPolicy': {}
-          'f:internalTrafficPolicy': {}
-          'f:ports':
+            "f:app": {}
+        "f:spec":
+          "f:allocateLoadBalancerNodePorts": {}
+          "f:externalTrafficPolicy": {}
+          "f:internalTrafficPolicy": {}
+          "f:ports":
             .: {}
             'k:{"port":3000,"protocol":"TCP"}':
               .: {}
-              'f:port': {}
-              'f:protocol': {}
-              'f:targetPort': {}
-          'f:selector': {}
-          'f:sessionAffinity': {}
-          'f:type': {}
+              "f:port": {}
+              "f:protocol": {}
+              "f:targetPort": {}
+          "f:selector": {}
+          "f:sessionAffinity": {}
+          "f:type": {}
       manager: GoogleCloudConsole
       operation: Update
-      time: '2024-01-21T14:56:14Z'
+      time: "2024-01-21T14:56:14Z"
     - apiVersion: v1
       fieldsType: FieldsV1
       fieldsV1:
-        'f:metadata':
-          'f:finalizers':
+        "f:metadata":
+          "f:finalizers":
             .: {}
             'v:"service.kubernetes.io/load-balancer-cleanup"': {}
-        'f:status':
-          'f:loadBalancer':
-            'f:ingress': {}
+        "f:status":
+          "f:loadBalancer":
+            "f:ingress": {}
       manager: cloud-controller-manager
       operation: Update
       subresource: status
-      time: '2024-01-21T14:56:57Z'
+      time: "2024-01-21T14:56:57Z"
   name: express-db-persistent-service
   namespace: default
 spec:
