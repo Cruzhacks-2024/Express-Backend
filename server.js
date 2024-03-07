@@ -100,10 +100,10 @@ app
   .put("/locations/:locationID", (req, res) => {
     const body = req.body;
     const params = req.params;
-    if (body.title && body.room) {
+    if (body.title) {
       db.run(
         "INSERT INTO sessions VALUES (?, ?, ?, ?)",
-        [ids.sessID, body.title, body.room, params.locationID],
+        [ids.sessID, body.title, body.room ?? null, params.locationID],
         function (err) {
           if (err) {
             res.status(500).send(`${err.name}: ${err.message}`);
