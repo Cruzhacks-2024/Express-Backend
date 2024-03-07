@@ -147,7 +147,7 @@ app
   })
   .delete("/locations/:locationID", (req, res) => {
     db.run(
-      "DELETE FROM locations WHERE locationID = ?",
+      "DELETE FROM locations WHERE id = ?",
       req.params.locationID,
       function (err) {
         if (err) {
@@ -170,7 +170,7 @@ app
   })
   .delete("/locations/:locationID/:sessionID", (req, res) => {
     db.run(
-      "DELETE FROM sessions WHERE locationID = ? AND sessionID = ?",
+      "DELETE FROM sessions WHERE locationID = ? AND id = ?",
       [req.params.locationID, req.params.sessionID],
       function (err) {
         if (err) {
